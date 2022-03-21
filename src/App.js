@@ -9,6 +9,8 @@ import {
   Route,
   Routes
 } from 'react-router-dom'
+import AbilityAdd from './components/AbilityAdd';
+import AbilityEdit from './components/AbilityEdit';
 
 function App() {
 
@@ -39,6 +41,18 @@ function App() {
           <Route
             path='/pokemons/:id'
             element={<Pokemon pokemons={pokemons} />}
+          />
+          <Route
+            path='/pokemons/:id'
+            element={<Pokemon pokemons={pokemons} />}
+          />
+          <Route
+            path='/pokemons/:id/abilities'
+            element={<AbilityAdd pokemons={pokemons} />}
+          />
+          <Route
+            path='/abilities/:id'
+            element={<AbilityEdit pokemons={pokemons} />}
           />
         </Routes>
       </div>

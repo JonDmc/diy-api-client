@@ -1,14 +1,7 @@
+import { Link } from "react-router-dom"
+import Abilities from "./Abilities"
 
 const PokemonDetails = ({ pokemon, abilities }) => {
-
-    const pokeAbilities = abilities.map((ability, idx) => {
-        return (
-            <div className="disp-ability">
-                <h3>Name: {ability.name}</h3>
-                <h3>Type: {ability.type}</h3>
-            </div>
-        )
-    })
 
     return (
         <>
@@ -18,8 +11,13 @@ const PokemonDetails = ({ pokemon, abilities }) => {
             <h3>Type:</h3> {pokemon.type}
             <h3>Weakness:</h3> {pokemon.weakness}
             <h3>Status: </h3>
-            {!pokemon.captured ? <h3>...still in the Wild!</h3> : <h3>Captured</h3>}
-            <h3>Abilities: </h3> {pokeAbilities}
+            {!pokemon.captured ? <p>...still in the Wild!</p> : <p>Captured</p>}
+            <hr />
+            <Abilities abilities={abilities} />
+            <Link to={`/pokemons/${pokemon._id}/abilities`}>Add Abilities</Link>
+            {/* <button>Add</button> */}
+            <hr />
+
         </>
     )
 }

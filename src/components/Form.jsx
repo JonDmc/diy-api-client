@@ -41,26 +41,6 @@ const Form = ({ pokemonForm, handlePokemon, setPokemonForm }) => {
                 <input type='submit' />
             </form>
             <br />
-            {/* <form onSubmit={handleAbility}>
-                <label htmlFor="name-ability">Name:</label>
-                <input
-                    type='text'
-                    value={abilityForm.name}
-                    onChange={e => setAbilityForm({ ...abilityForm, name: e.target.value })}
-                    id='name-ability'
-                />
-                <br />
-                <label htmlFor="type-ability">Type:</label>
-                <input
-                    type='text'
-                    value={abilityForm.type}
-                    onChange={e => setAbilityForm({ ...abilityForm, type: e.target.value })}
-                    id='type-ability'
-                />
-                <br />
-                <input type='submit' />
-            </form> */}
-            <br />
         </div>
     )
 }

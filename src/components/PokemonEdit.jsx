@@ -2,9 +2,10 @@ import { useState } from 'react'
 import axios from 'axios'
 import Form from './Form'
 
-const PokemonEdit = ({ pokemon, showForm, setShowForm }) => {
+const PokemonEdit = ({ pokemon, showForm, setShowForm, abilities }) => {
 
     const [pokemonForm, setPokemonForm] = useState([])
+    const [abilityForm, setAbilityForm] = useState([])
 
     const handlePokemon = e => {
         e.preventDefault()
@@ -16,6 +17,15 @@ const PokemonEdit = ({ pokemon, showForm, setShowForm }) => {
                 setShowForm(!showForm)
             })
 
+    }
+
+    const handleAbility = e => {
+        e.preventDefault()
+
+        axios.put(`${process.env.REACT_APP_SERVER_URL}/abilities/${abilities._id}`, abilityForm)
+            .then(response => {
+                setShowForm(!showForm)
+            })
     }
     return (
         <>
